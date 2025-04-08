@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Apr 07 23:05:24 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Apr 08 15:28:04 2025
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -427,15 +427,19 @@ Global Symbols
 
 <P><STRONG><a name="[50]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(i.GPIO_ReadInputDataBit))
 <BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_GetNum
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED4_turn
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_turn
 </UL>
 
-<P><STRONG><a name="[57]"></a>GPIO_ResetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(i.GPIO_ResetBits))
-<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_ON
+<P><STRONG><a name="[56]"></a>GPIO_ResetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(i.GPIO_ResetBits))
+<BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED4_turn
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_turn
 </UL>
 
 <P><STRONG><a name="[55]"></a>GPIO_SetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(i.GPIO_SetBits))
 <BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_OFF
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED4_turn
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_turn
 </UL>
 
 <P><STRONG><a name="[5]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.HardFault_Handler))
@@ -459,18 +463,22 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[54]"></a>LED1_OFF</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, led.o(i.LED1_OFF))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LED1_OFF
+<P><STRONG><a name="[54]"></a>LED1_turn</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, led.o(i.LED1_turn))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LED1_turn
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[56]"></a>LED1_ON</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, led.o(i.LED1_ON))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LED1_ON
+<P><STRONG><a name="[57]"></a>LED4_turn</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, led.o(i.LED4_turn))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LED4_turn
 </UL>
-<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -521,8 +529,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_GetNum
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_ON
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_OFF
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED4_turn
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_turn
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>

@@ -5,7 +5,9 @@
 void LED_Init(void);
 void LED1_ON();
 void LED1_OFF();
+void LED1_turn();
 void LED4_ON();
 void LED4_OFF();
+void LED4_turn();
 #endif
  

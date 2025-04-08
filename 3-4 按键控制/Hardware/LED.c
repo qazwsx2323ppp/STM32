@@ -25,6 +25,15 @@ void LED1_ON()
 	GPIO_ResetBits(GPIOA, GPIO_Pin_1);
 }
 
+void LED1_turn()
+{
+	if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1) == 0)
+	{
+		GPIO_SetBits(GPIOA, GPIO_Pin_1);
+	}
+	else GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+}
+
 void LED4_OFF()
 {
 	GPIO_SetBits(GPIOA, GPIO_Pin_4);
@@ -35,3 +44,11 @@ void LED4_ON()
 	GPIO_ResetBits(GPIOA, GPIO_Pin_4);
 }
 
+void LED4_turn()
+{
+	if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_4) == 0)
+	{
+		GPIO_SetBits(GPIOA, GPIO_Pin_4);
+	}
+	else GPIO_ResetBits(GPIOA, GPIO_Pin_4);
+}
