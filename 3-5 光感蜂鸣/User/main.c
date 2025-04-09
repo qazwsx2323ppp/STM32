@@ -3,6 +3,7 @@
 #include "LED.h"
 #include "Key.h"
 #include "Buzzer.h"
+#include "LightSensor.h"
 
 
 uint8_t KeyNum;
@@ -12,28 +13,19 @@ int main(void)
 	LED_Init();
 	Key_init();
 	BUZZER_Init();
+	LightSensor_Init();
 	   
     while (1)
    {
-	   
-	   KeyNum = Key_GetNum();
-       if (KeyNum == 1)
-       {
-           LED1_turn();
-       }
-       if (KeyNum == 2)
-       {
-           LED4_turn();
-       }
-	   
-	  BUZZER_ON();
-	  Delay_ms(500);
-	  BUZZER_OFF();
-	  Delay_ms(500);
-	  BUZZER_turn();
-	  Delay_ms(500);
-	  BUZZER_turn();
-	  Delay_ms(500);
-	  
+	   if (LightSensor_Get() == 1) //即光线较暗时 
+	   {
+		   LED1_ON();
+		   LED4_OFF();
+	   }
+	   else
+	   {
+		   LED4_ON();
+		   LED1_OFF();
+	   }
    }
 }
