@@ -14,7 +14,7 @@ int main(void)
 	OLED_ShowSignedNum(2, 7, -66, 2); //显示带符号数，符号不算入字长
 	OLED_ShowHexNum(3, 1, 0xAA55, 4);
 	
-	OLED_Clear(); //清屏
+//	OLED_Clear(); //清屏
 	//若想清楚某位置的字符，可使用OLED_ShowString(x, x, "空格");
        while (1)
      {
